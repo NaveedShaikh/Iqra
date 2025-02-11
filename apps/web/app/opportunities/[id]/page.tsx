@@ -17,6 +17,7 @@ import { useSession } from "next-auth/react";
 import { useRouter } from "next/navigation";
 import { useQue } from "@/src/context/QueContent";
 import { FormLoader } from "@/src/components/lib/loader";
+import QuizDialog from "@/src/components/interview/quiz-diglog";
 
 const fetcher = (url: string) => Axios(url).then((res) => res.data.data);
 export default function Page({ params }: { params: { id: string } }) {
@@ -26,6 +27,7 @@ export default function Page({ params }: { params: { id: string } }) {
     const user: any = userData?.user;
     const router = useRouter();
     const {handleAddInQue} = useQue();
+    const [open, setOpen] = useState(false)
     
 
     const handleApply = useCallback(async () => {
@@ -115,7 +117,8 @@ export default function Page({ params }: { params: { id: string } }) {
                                     <button
                                         className="w-full bg-themePrimary hover:bg-themeDarkerAlt disabled:bg-themeDarkerAlt text-white font-bold py-3 px-4 rounded-lg transition duration-300 ease-in-out flex items-center justify-center group"
                                         aria-label="Register for event"
-                                        onClick={handleApply}
+                                        // onClick={handleApply}
+                                        onClick={() => setOpen(true)}
                                         disabled={loading}
                                     >
                                         <span>{!loading ? 'Apply For Live Interview' : 'Loading...'}</span>
@@ -129,7 +132,7 @@ export default function Page({ params }: { params: { id: string } }) {
                     </main>
                 </Layout >
             }
-
+            <QuizDialog open={open} setOpen={setOpen} handelClick={handleApply}/>
         </>
     );
 }

@@ -37,7 +37,7 @@ const LoginForm = () => {
       if (result.ok) {
         const session = await getSession();
         const user = session?.user as any;
-        window.location.href = '/dashbaord'
+        window.location.href = '/dashboard'
         if (user.role.isCandidate) {
           window.location.href = '/upcoming-events'
         } else if (user.role.isEmployer) {

@@ -65,6 +65,75 @@ const RegisterForm: FC<IProps> = ({ setStep,name,setName,description, setDescrip
             <option value="other">Other</option>
           </select>
         </div>
+
+
+        <div>
+          <label htmlFor="mode" className="block text-sm font-medium text-gray-700">
+            Mode
+          </label>
+          <select
+            id="mode"
+            name="mode"
+            required
+            className="block w-full rounded-md border-gray-300 shadow-sm py-2 px-3 mt-2 border border-gray-100"
+           
+          >
+            <option value="">Select a Mode</option>
+            <option value="easy">Easy</option>
+            <option value="medium">Medium</option>
+            <option value="hard">Hard</option>
+          </select>
+        </div>
+
+        <div>
+          <label htmlFor="difficulty" className="block text-sm font-medium text-gray-700">
+            Difficulty
+          </label>
+          <select
+            id="difficulty"
+            name="difficulty"
+            required
+            className="block w-full rounded-md border-gray-300 shadow-sm py-2 px-3 mt-2 border border-gray-100"
+          
+          >
+            <option value="">Select a Mode</option>
+            <option value="easy">Easy</option>
+            <option value="medium">Medium</option>
+            <option value="hard">Hard</option>
+          </select>
+        </div>
+
+
+
+        <div>
+          <label htmlFor="name" className="block text-sm font-medium text-gray-700">
+            Topic
+          </label>
+          <input
+            type="text"
+            id="topic"
+            name="topic"
+            required
+            className="block w-full rounded-md border-gray-300 shadow-sm py-2 px-3 mt-2 border border-gray-100"
+            placeholder='Topics Name'
+          />
+        </div>
+
+        <div>
+          <label htmlFor="name" className="block text-sm font-medium text-gray-700">
+            Keyword
+          </label>
+          <input
+            type="text"
+            id="topic"
+            name="topic"
+            required
+            className="block w-full rounded-md border-gray-300 shadow-sm py-2 px-3 mt-2 border border-gray-100"
+            placeholder='Keyword eg: webrtc,sql'
+          />
+        </div>
+        
+
         <button
           type="submit"
           className="w-full py-2 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 dark:bg-indigo-500 dark:hover:bg-indigo-600"

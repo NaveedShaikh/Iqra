@@ -142,7 +142,7 @@ export default function Home() {
               zIndex: 0,
             }}
           >
-            <EventsBanner />
+            {/* <EventsBanner /> */}
           </div>
           <div
             style={{
